@@ -4,6 +4,7 @@ const DIST_DIR = path.join(__dirname, '/react-client/dist');
 const webpack = require('webpack');
 
 module.exports = {
+  mode: "development",
   entry: `${SRC_DIR}/index.js`,
   output: {
     path: DIST_DIR,

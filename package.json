@@ -15,6 +15,7 @@
   "author": "Eric Gan",
   "license": "MIT",
   "dependencies": {
+    "file-loader": "^3.0.1",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-router": "^4.1.2",
@@ -28,6 +29,7 @@
     "babel-preset-react": "^6.24.1",
     "body-parser": "^1.17.2",
     "express": "^4.15.3",
-    "webpack": "^3.4.1"
+    "webpack": "^4.0.0",
+    "webpack-cli": "^3.2.1"
   }
 }
