@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import WelcomePanel from '../welcome/welcomePanel';
+import WelcomePanel from '../welcomePanel.jsx';
 
 class HomePage extends Component {
   render() {
     return (
       <div>
-        <WelcomePanel/>
+        <WelcomePanel />
       </div>
     )
   }
