@@ -32,12 +32,11 @@ module.exports = {
         ]
       },
       {
-        test: /\.png$/,
-        loader: 'url-loader?limit=100000&minetype=image/png'
-      },
-      {
-        test: /\.jpg/,
-        loader: 'file-loader'
+        test: /\.(pdf|gif|png|jpe?g|svg)$/,
+        loader: 'file-loader',
+        options: {
+          localIdentName: "[path][name].[ext]"
+        }
       },
       {
         test : /\.jsx?/,

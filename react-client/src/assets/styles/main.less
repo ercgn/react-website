@@ -1,3 +1,6 @@
+@import "./theme.less";
+@import "./lists.less";
+
 @media screen and (max-width: 480px) {
   html,
   body {
@@ -5,32 +8,32 @@
   }
 }
 
-html {
+html, body {
   height: 100%;
 }
 
 body {
   height: 100%;
-  background-color: #ffffff;
-  background-image: url("../images/overlay.png"), -moz-linear-gradient(60deg, rgba(255, 255, 255, 0.35) 5%, rgba(255, 255, 255, 0.1)), url("../images/whistler.jpg");
-  background-image: url("../images/overlay.png"), -webkit-linear-gradient(60deg, rgba(255, 255, 255, 0.35) 5%, rgba(255, 255, 255, 0.1)), url("../images/whistler.jpg");
-  background-image: url("../images/overlay.png"), -ms-linear-gradient(60deg, rgba(255, 255, 255, 0.35) 5%, rgba(255, 255, 255, 0.1)), url("../images/whistler.jpg");
-  background-image: url("../images/overlay.png"), linear-gradient(60deg, rgba(255, 255, 255, 0.35) 5%, rgba(255, 255, 255, 0.1)), url("../images/whistler.jpg");
+  background-color: @ColorWhite;
+  background-image: @ImageOverlay, -moz-linear-gradient(60deg, rgba(255, 255, 255, 0.35) 5%, rgba(255, 255, 255, 0.1)), @ImageWhistler;
+  background-image: @ImageOverlay, -webkit-linear-gradient(60deg, rgba(255, 255, 255, 0.35) 5%, rgba(255, 255, 255, 0.1)), @ImageWhistler;
+  background-image: @ImageOverlay, -ms-linear-gradient(60deg, rgba(255, 255, 255, 0.35) 5%, rgba(255, 255, 255, 0.1)), @ImageWhistler;
+  background-image: @ImageOverlay, linear-gradient(60deg, rgba(255, 255, 255, 0.35) 5%, rgba(255, 255, 255, 0.1)), @ImageWhistler;
   background-repeat: repeat, no-repeat, no-repeat;
   background-size: 100px 100px, cover, cover;
   background-position: top left, center center, top left;
   background-attachment: fixed, fixed, fixed;
 
-  &.is-loading {
+  &.isLoading {
     *, *:before, *:after {
-    -moz-animation: none !important;
-    -webkit-animation: none !important;
-    -ms-animation: none !important;
-    animation: none !important;
-    -moz-transition: none !important;
-    -webkit-transition: none !important;
-    -ms-transition: none !important;
-    transition: none !important;
+      -moz-animation: none !important;
+      -webkit-animation: none !important;
+      -ms-animation: none !important;
+      animation: none !important;
+      -moz-transition: none !important;
+      -webkit-transition: none !important;
+      -ms-transition: none !important;
+      transition: none !important;
     }
   }
 
@@ -44,21 +47,21 @@ body {
     height: inherit;
     opacity: 0;
     z-index: -1;
-    background-color: #ffffff;
-    background-image: -moz-linear-gradient(60deg, rgba(255, 165, 150, 0.5) 5%, rgba(0, 228, 255, 0.35));
-    background-image: -webkit-linear-gradient(60deg, rgba(255, 165, 150, 0.5) 5%, rgba(0, 228, 255, 0.35));
-    background-image: -ms-linear-gradient(60deg, rgba(255, 165, 150, 0.5) 5%, rgba(0, 228, 255, 0.35));
-    background-image: linear-gradient(60deg, rgba(255, 165, 150, 0.5) 5%, rgba(0, 228, 255, 0.35));
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
+    background-color: @ColorWhite;
+    background-image: @ImageOverlay, -moz-linear-gradient(60deg, rgba(255, 165, 150, 0.5) 5%, rgba(0, 228, 255, 0.35));
+    background-image: @ImageOverlay, -webkit-linear-gradient(60deg, rgba(255, 165, 150, 0.5) 5%, rgba(0, 228, 255, 0.35));
+    background-image: @ImageOverlay, -ms-linear-gradient(60deg, rgba(255, 165, 150, 0.5) 5%, rgba(0, 228, 255, 0.35));
+    background-image: @ImageOverlay, linear-gradient(60deg, rgba(255, 165, 150, 0.5) 5%, rgba(0, 228, 255, 0.35));
+    background-repeat: repeat, no-repeat;
+    background-size: 100px 100px, cover;
+    background-position: top left, center center;
     -moz-transition: opacity 1.75s ease-out;
     -webkit-transition: opacity 1.75s ease-out;
     -ms-transition: opacity 1.75s ease-out;
     transition: opacity 1.75s ease-out;
   }
 
-  &.is-loading {
+  &.isLoading {
     &:after {
       opacity: 1;
     }
@@ -69,7 +72,6 @@ body {
 			-webkit-transform: rotateX(15deg);
 			-ms-transform: rotateX(15deg);
 			transform: rotateX(15deg);
-
     }
   }
 }
@@ -79,9 +81,9 @@ body {
   min-width: 29em;
   max-width: 60%;
   position: fixed;
-  background-color: #ffffff;
+  background-color: @ColorWhite;
   padding: 4.5em 3em 3em 3em;
-  color: #333333;
+  color: @ColorText;
   opacity: 0.95;
   overflow: auto;
   cursor: default;
@@ -99,7 +101,7 @@ body {
   transition: opacity 1s ease, transform 1s ease;
 
   p {
-    font-size: 24px;
+    font-size: 22px;
   }
 
   header {
@@ -112,16 +114,21 @@ body {
     -ms-align-self: -ms-flex-end;
     align-self: flex-end;
     width: 100%;
-    padding: 1.5em 0 0 0;
-    color: rgba(63, 63, 63, 0.75);
+    padding: 0.2em 0 0 0;
+    color: @ColorText;
     cursor: default;
     text-align: center;
     position: relative;
+
+    p {
+      font-size: 12px;
+      opacity: 0.8;
+    }
   }
 }
 
 #portfolio {
-  margin: 0 0 0.5em;
+  margin: 0 0 0.2em;
   font-size: 80px;
   font-family: 'Helvetica Neue', 'Roboto', Helvetica, Arial, sans-serif;
   font-weight: bolder;
@@ -143,6 +150,25 @@ a {
   }
 
   &:hover {
-    color: #0962ab;
+    color: @ColorHyperlink;
+  }
+}
+
+.icon {
+  text-decoration: none;
+  position: relative;
+  border-bottom: none;
+
+  &:before {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-transform: none !important;
+  }
+
+  > .label {
+    display: none;
   }
 }
