@@ -1,10 +1,13 @@
 const path = require('path');
+const webpack = require('webpack');
+const React = require('react');
+const ReactDOM = require('react-dom');
+
 const SRC_DIR = path.join(__dirname, '/react-client/src');
 const DIST_DIR = path.join(__dirname, '/react-client/dist');
-const webpack = require('webpack');
 
 module.exports = {
-  mode: "development",
+  mode: "production",
   entry: `${SRC_DIR}/index.js`,
   output: {
     path: DIST_DIR,
